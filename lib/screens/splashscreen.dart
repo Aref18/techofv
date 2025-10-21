@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:techofv/screens/HomePage.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Splashscreen extends StatefulWidget {
   Splashscreen({super.key});
@@ -37,7 +38,8 @@ class _SplashscreenState extends State<Splashscreen> {
                 child: Image.asset('assets/images/logo.png', fit: BoxFit.cover),
               ),
             ),
-
+            SizedBox(height: 20),
+            SpinKitCircle(color: Colors.green, size: 50.0),
             Container(
               width: double.infinity,
 
