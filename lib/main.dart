@@ -3,7 +3,7 @@ import 'package:techofv/screens/splashscreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
-  runApp(const TechOfV());
+  runApp(TechOfV());
 }
 
 class TechOfV extends StatelessWidget {
