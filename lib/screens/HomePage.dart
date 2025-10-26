@@ -40,14 +40,14 @@ class _HomepageState extends State<Homepage> {
                   Icon(Icons.search, size: 35),
                 ],
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 20),
               Stack(
                 children: [
                   Container(
                     width: size.width / 1.1,
-                    height: size.height / 4.2,
+                    height: size.height / 4.7,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(30),
                       image: DecorationImage(
                         image: Image.asset(
                           'assets/images/banner1.jpg',
@@ -56,11 +56,12 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                   ),
+
                   Container(
                     width: size.width / 1.1,
-                    height: size.height / 4.2,
+                    height: size.height / 4.7,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(30),
                       gradient: LinearGradient(
                         colors: gradients.poster.colors,
                         begin: Alignment.topCenter,

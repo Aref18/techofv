@@ -18,9 +18,9 @@ class gradients {
   static const poster = LinearGradient(
     colors: [
       Color.fromARGB(0, 0, 0, 0),
-      Color.fromARGB(195, 72, 20, 88),
+      Color.fromARGB(188, 74, 34, 87),
 
-      Color.fromARGB(255, 280, 20, 81),
+      Color.fromARGB(255, 30, 23, 130),
     ],
   );
 }
