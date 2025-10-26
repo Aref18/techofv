@@ -18,7 +18,6 @@ class TechOfV extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('en'), // English
         Locale('fa'), // farsi
       ],
       debugShowCheckedModeBanner: false,

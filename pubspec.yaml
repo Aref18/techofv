@@ -65,6 +65,10 @@ flutter:
     - assets/images/tech of.png
     - assets/images/logo.png
     - assets/images/VIC.png
+    - assets/images/tov.png
+    - assets/images/banner.jpg
+    - assets/images/banner1.jpg
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
