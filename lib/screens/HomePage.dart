@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:techofv/constants/colors.dart';
+import 'package:techofv/constants/text_styles.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -47,7 +48,7 @@ class _HomepageState extends State<Homepage> {
                     width: size.width / 1.1,
                     height: size.height / 4.7,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(16),
                       image: DecorationImage(
                         image: Image.asset(
                           'assets/images/banner1.jpg',
@@ -55,18 +56,36 @@ class _HomepageState extends State<Homepage> {
                         ).image,
                       ),
                     ),
-                  ),
-
-                  Container(
-                    width: size.width / 1.1,
-                    height: size.height / 4.7,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
+                    foregroundDecoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
                       gradient: LinearGradient(
                         colors: gradients.poster.colors,
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                       ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 8,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'عارف موسوی - 2 ساعت پیش',
+                              style: TextStyles.SubTitle,
+                            ),
+                            Text('Like 230', style: TextStyles.SubTitle),
+                          ],
+                        ),
+                        Text(
+                          ' اولین قدم به دنیای تکنولوژی و ...',
+                          style: TextStyles.Title,
+                        ),
+                      ],
                     ),
                   ),
                 ],
