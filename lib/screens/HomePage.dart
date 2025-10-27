@@ -100,19 +100,27 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ],
               ),
+              SizedBox(height: 25),
 
               SizedBox(
                 height: 80,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 5,
+                  itemCount: TagList.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        color: Colors.black,
-                        width: 20,
-                        height: 40,
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: gradients.Tags.colors,
+                            begin: Alignment.centerRight,
+                            end: Alignment.centerLeft,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(24)),
+                        ),
                       ),
                     );
                   },

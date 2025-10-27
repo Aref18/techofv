@@ -11,7 +11,9 @@ class gradients {
     colors: [Colors.deepPurpleAccent, Colors.black],
   );
 
-  static const Tags = LinearGradient(colors: [Colors.grey, Colors.black]);
+  static const Tags = LinearGradient(
+    colors: [Color.fromARGB(255, 0, 0, 0), Color.fromARGB(174, 0, 0, 0)],
+  );
   static const poster = LinearGradient(
     colors: [
       Color.fromARGB(0, 0, 0, 0),
