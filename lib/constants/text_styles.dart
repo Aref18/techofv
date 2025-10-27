@@ -12,4 +12,10 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 15,
   );
+
+  static const TextStyle TextButton = TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 }

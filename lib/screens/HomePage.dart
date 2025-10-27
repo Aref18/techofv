@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/constants/colors.dart';
 import 'package:techofv/constants/text_styles.dart';
 
@@ -50,10 +51,7 @@ class _HomepageState extends State<Homepage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       image: DecorationImage(
-                        image: Image.asset(
-                          'assets/images/banner1.jpg',
-                          fit: BoxFit.cover,
-                        ).image,
+                        image: AssetImage(HomePagePoster["ImageAsset"]),
                       ),
                     ),
                     foregroundDecoration: BoxDecoration(
@@ -75,16 +73,28 @@ class _HomepageState extends State<Homepage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'عارف موسوی - 2 ساعت پیش',
+                              HomePagePoster["Writer"] +
+                                  " - " +
+                                  HomePagePoster["Data"],
                               style: TextStyles.SubTitle,
                             ),
-                            Text('Like 230', style: TextStyles.SubTitle),
+                            Row(
+                              children: [
+                                Text(
+                                  HomePagePoster["View"],
+                                  style: TextStyles.SubTitle,
+                                ),
+                                SizedBox(width: 8),
+                                Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
-                        Text(
-                          ' اولین قدم به دنیای تکنولوژی و ...',
-                          style: TextStyles.Title,
-                        ),
+                        Text(HomePagePoster["Title"], style: TextStyles.Title),
                       ],
                     ),
                   ),
