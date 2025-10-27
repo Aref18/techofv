@@ -112,14 +112,27 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         height: 80,
-                        width: 80,
+
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: gradients.Tags.colors,
                             begin: Alignment.centerRight,
                             end: Alignment.centerLeft,
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(24)),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+                          child: Row(
+                            children: [
+                              Icon(Icons.handyman_sharp, color: Colors.white),
+                              SizedBox(width: 8),
+                              Text(
+                                TagList[index].Title,
+                                style: TextStyles.TagStyle,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

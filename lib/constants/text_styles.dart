@@ -18,4 +18,10 @@ class TextStyles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+
+  static const TextStyle TagStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 }
