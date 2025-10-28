@@ -25,6 +25,8 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    double BodyMargin = size.width / 15;
+
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -109,34 +111,53 @@ class _HomepageState extends State<Homepage> {
                   itemCount: TagList.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 80,
-
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: gradients.Tags.colors,
-                            begin: Alignment.centerRight,
-                            end: Alignment.centerLeft,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(
+                          0,
+                          5,
+                          index == 0 ? BodyMargin : 34,
+                          20,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-                          child: Row(
-                            children: [
-                              Icon(Icons.handyman_sharp, color: Colors.white),
-                              SizedBox(width: 8),
-                              Text(
-                                TagList[index].Title,
-                                style: TextStyles.TagStyle,
-                              ),
-                            ],
+                        child: Container(
+                          height: 80,
+
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: gradients.Tags.colors,
+                              begin: Alignment.centerRight,
+                              end: Alignment.centerLeft,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+                            child: Row(
+                              children: [
+                                Icon(Icons.tag, color: Colors.white),
+                                SizedBox(width: 8),
+                                Text(
+                                  TagList[index].Title,
+                                  style: TextStyles.TagStyle,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     );
                   },
+                ),
+              ),
+              SizedBox(height: 70),
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Row(
+                  children: [
+                    Icon(Icons.edit, size: 30),
+                    SizedBox(width: 20),
+                    Text('مشاهده داغ ترین نوشته ها'),
+                  ],
                 ),
               ),
             ],
