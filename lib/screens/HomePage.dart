@@ -163,38 +163,93 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(height: 15),
               SizedBox(
-                height: size.height / 5,
+                height: size.height / 3.5,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: blogmodel.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          right: index == 0 ? BodyMargin : 15,
-                        ),
-                        child: Container(
-                          height: size.height / 5.3,
-                          width: size.width / 2.1,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: NetworkImage(blogmodel[index].imageUrl),
-                              fit: BoxFit.cover,
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              right: index == 0 ? BodyMargin : 15,
+                            ),
+                            child: SizedBox(
+                              height: size.height / 5.3,
+                              width: size.width / 2.1,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(15),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          blogmodel[index].imageUrl,
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    foregroundDecoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: gradients.BlogColor.colors,
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 8,
+                                    left: 0,
+                                    right: 0,
+
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text(
+                                          blogmodel[index].writer,
+                                          style: TextStyles.SubTitle,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              blogmodel[index].view,
+                                              style: TextStyles.SubTitle,
+                                            ),
+                                            SizedBox(width: 8),
+                                            Icon(
+                                              Icons.remove_red_eye,
+                                              color: Colors.white,
+                                              size: 16,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          foregroundDecoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: gradients.BlogColor.colors,
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            right: index == 0 ? BodyMargin : 15,
+                          ),
+                          child: SizedBox(
+                            width: size.width / 2.4,
+                            child: Text(
+                              blogmodel[index].title,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                             ),
-                            borderRadius: BorderRadius.circular(15),
                           ),
                         ),
-                      ),
+                      ],
                     );
                   },
                 ),

@@ -22,7 +22,7 @@ List<BlogModel> blogmodel = [
     id: 1,
     imageUrl:
         'https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png',
-    title: 'مرد عنکبوتی کیست ؟',
+    title: 'مرد عنکبوتی کیست ؟آشنایی با آن و تاریچه اش',
     writer: 'جواد خیابانی',
     WriterimageUrl:
         'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png',
@@ -36,7 +36,7 @@ List<BlogModel> blogmodel = [
     id: 2,
     imageUrl:
         'https://www.pepegallery.com/wp-content/uploads/2024/01/%D8%A7%DA%A9%D8%B4%D9%86-%D9%81%DB%8C%DA%AF%D9%88%D8%B1-%D9%81%D9%88%D9%82-%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%87-%D8%A8%D8%AA%D9%85%D9%86-%DA%A9%D8%B1%DB%8C%D8%B3%D8%AA%DB%8C%D9%86-%D8%A8%DB%8C%D9%84-%D8%A8%D8%AA%D9%85%D9%86-%D8%A8%DB%8C%DA%AF%DB%8C%D9%86%D8%B2-5.jpg',
-    title: 'بتمن کیست ؟',
+    title: 'بتمن کیست ؟آشنایی با آن و تاریچه اش',
     writer: 'علیرضا مشتی',
     WriterimageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfE8XWOVe86hLGi8m9mgPTsva_KWjTHbT9iQ&s',
@@ -50,7 +50,7 @@ List<BlogModel> blogmodel = [
     id: 3,
     imageUrl:
         'https://happypeyk.com/wp-content/uploads/2022/01/Stand-Superman.jpg.webp',
-    title: 'سوپرمن کیست ؟',
+    title: 'سوپرمن کیست ؟ آشنایی با آن و تاریچه اش',
     writer: 'پارسا خجسته ',
     WriterimageUrl:
         'https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg',
@@ -64,7 +64,7 @@ List<BlogModel> blogmodel = [
     id: 4,
     imageUrl:
         'https://par30games.net/wp-content/uploads/2022/09/Joker-DC-1280x720.jpg',
-    title: 'جوکر کیست ؟',
+    title: 'جوکر کیست ؟ آشنایی با آن و تاریچه اش',
     writer: 'فاطمه قربانی',
     WriterimageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjtRGTcDN7Xk9JGqpkdE2GcRVHOl7LEZmm3g&s',
