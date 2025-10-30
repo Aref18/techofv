@@ -149,15 +149,33 @@ class _HomepageState extends State<Homepage> {
                   },
                 ),
               ),
-              SizedBox(height: 70),
+              SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: Row(
                   children: [
-                    Icon(Icons.edit, size: 30),
-                    SizedBox(width: 20),
-                    Text('مشاهده داغ ترین نوشته ها'),
+                    Icon(Icons.edit, size: 35, color: Colors.blue),
+                    SizedBox(width: 10),
+                    Text('مشاهده داغ ترین نوشته ها', style: TextStyles.Title2),
                   ],
+                ),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                height: size.height / 5,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: blogmodel.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Container(
+                        height: 50,
+                        width: 100,
+                        color: Colors.red,
+                      ),
+                    );
+                  },
                 ),
               ),
             ],
