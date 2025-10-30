@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:techofv/Models/date_models.dart';
 import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/constants/colors.dart';
 import 'package:techofv/constants/text_styles.dart';
@@ -151,7 +152,7 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.only(right: 10),
+                padding: const EdgeInsets.only(right: 35),
                 child: Row(
                   children: [
                     Icon(Icons.edit, size: 35, color: Colors.blue),
@@ -168,11 +169,31 @@ class _HomepageState extends State<Homepage> {
                   itemCount: blogmodel.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Container(
-                        height: 50,
-                        width: 100,
-                        color: Colors.red,
+                      padding: const EdgeInsets.all(10),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          right: index == 0 ? BodyMargin : 15,
+                        ),
+                        child: Container(
+                          height: size.height / 5.3,
+                          width: size.width / 2.1,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                              image: NetworkImage(blogmodel[index].imageUrl),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          foregroundDecoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: gradients.BlogColor.colors,
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
                       ),
                     );
                   },

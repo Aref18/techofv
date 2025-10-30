@@ -22,4 +22,12 @@ class gradients {
       Color.fromARGB(255, 30, 23, 130),
     ],
   );
+
+  static const BlogColor = LinearGradient(
+    colors: [
+      Color.fromARGB(255, 0, 0, 0),
+      Color.fromARGB(111, 0, 0, 0),
+      Color.fromARGB(0, 0, 0, 0),
+    ],
+  );
 }
