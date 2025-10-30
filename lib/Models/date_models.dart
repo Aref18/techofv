@@ -9,7 +9,7 @@ class BlogModel {
   String imageUrl;
   String title;
   String writer;
-  String writerimageUrl;
+  String WriterimageUrl;
   String date;
   String content;
   String view;
@@ -19,7 +19,7 @@ class BlogModel {
     required this.imageUrl,
     required this.title,
     required this.writer,
-    required this.writerimageUrl,
+    required this.WriterimageUrl,
     required this.date,
     required this.content,
     required this.view,
