@@ -8,13 +8,18 @@ class TextStyles {
     fontWeight: FontWeight.bold,
   );
   static const TextStyle Title2 = TextStyle(
-    color: Colors.blue,
+    color: Colors.deepPurple,
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
   static const TextStyle SubTitle = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.w400,
+    fontSize: 15,
+  );
+  static const TextStyle SubTitle2 = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
     fontSize: 15,
   );
 

@@ -1,6 +1,5 @@
 class HashTags {
   String Title;
-
   HashTags({required this.Title});
 }
 
@@ -24,4 +23,11 @@ class BlogModel {
     required this.content,
     required this.view,
   });
+}
+
+class PodCast {
+  int id;
+  String imageUrl;
+  String name;
+  PodCast({required this.id, required this.imageUrl, required this.name});
 }

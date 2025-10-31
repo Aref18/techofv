@@ -75,3 +75,24 @@ List<BlogModel> blogmodel = [
     view: '120',
   ),
 ];
+
+List<PodCast> Pod = [
+  PodCast(
+    id: 1,
+    imageUrl:
+        'https://static.vecteezy.com/system/resources/previews/038/236/595/non_2x/cryptocurrency-trading-financial-market-candles-and-indicators-with-volume-chart-blue-color-technology-background-trade-chart-of-forex-cryptocurrency-stock-market-and-binary-option-vector.jpg',
+    name: 'رمزی',
+  ),
+  PodCast(
+    id: 2,
+    imageUrl:
+        'https://img.freepik.com/premium-psd/art-deco-steampunk-neon-light-traces-radio-towers-deep-purpl-png-y2k-shapes-transparent-light-arts_1020495-89990.jpg?w=360',
+    name: 'رادیوی',
+  ),
+  PodCast(
+    id: 3,
+    imageUrl:
+        'https://momaa.org/wp-content/uploads/2025/05/The-Evolution-and-Impact-of-Digital-Art-in-the-Contemporary-Art-World-1.png',
+    name: 'تکنوی',
+  ),
+];
