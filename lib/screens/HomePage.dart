@@ -375,24 +375,31 @@ class _HomepageState extends State<Homepage> {
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: gradients.ButtonNav.colors,
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                     ),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
+                        highlightColor: Colors.transparent,
                         onPressed: () {},
-                        icon: Icon(Icons.home, color: Colors.white),
+                        icon: Icon(Icons.home, color: Colors.white, size: 30),
                       ),
                       IconButton(
+                        highlightColor: Colors.transparent,
                         onPressed: () {},
-                        icon: Icon(Icons.edit_note, color: Colors.white),
+                        icon: Icon(
+                          Icons.edit_note,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                       IconButton(
+                        highlightColor: Colors.transparent,
                         onPressed: () {},
-                        icon: Icon(Icons.person, color: Colors.white),
+                        icon: Icon(Icons.person, color: Colors.white, size: 30),
                       ),
                     ],
                   ),
