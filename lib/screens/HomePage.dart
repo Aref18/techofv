@@ -30,7 +30,8 @@ class _HomepageState extends State<Homepage> {
     bool isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
-    double imageHeight = isLandscape ? size.height / 2.5 : size.height / 3.5;
+    double imageHeight = isLandscape ? size.width / 3 : size.height / 4.7;
+    double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -67,10 +68,11 @@ class _HomepageState extends State<Homepage> {
                     children: [
                       Container(
                         width: size.width / 1.1,
-                        height: size.height / 4.7,
+                        height: imageHeight,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           image: DecorationImage(
+                            fit: BoxFit.fill,
                             image: AssetImage(HomePagePoster["ImageAsset"]),
                           ),
                         ),
@@ -204,7 +206,7 @@ class _HomepageState extends State<Homepage> {
                                   right: index == 0 ? BodyMargin : 15,
                                 ),
                                 child: SizedBox(
-                                  height: size.height / 5.3,
+                                  height: imageHeight,
                                   width: size.width / 2.1,
                                   child: Stack(
                                     children: [
@@ -218,7 +220,7 @@ class _HomepageState extends State<Homepage> {
                                             image: NetworkImage(
                                               blogmodel[index].imageUrl,
                                             ),
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                         foregroundDecoration: BoxDecoration(
@@ -317,14 +319,14 @@ class _HomepageState extends State<Homepage> {
                                   right: index == 0 ? BodyMargin : 15,
                                 ),
                                 child: SizedBox(
-                                  height: size.height / 5.3,
+                                  height: imageHeight,
                                   width: size.width / 2.1,
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
                                       color: Colors.blue,
                                       image: DecorationImage(
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fill,
                                         image: NetworkImage(
                                           Pod[index].imageUrl,
                                         ),
@@ -351,6 +353,7 @@ class _HomepageState extends State<Homepage> {
                       },
                     ),
                   ),
+                  SizedBox(height: NavButton),
                 ],
               ),
             ),
@@ -367,7 +370,7 @@ class _HomepageState extends State<Homepage> {
                   end: Alignment.bottomCenter,
                 ),
               ),
-              height: size.height / 11,
+              height: NavButton,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
                 child: Container(
