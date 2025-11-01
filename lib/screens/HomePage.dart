@@ -34,23 +34,24 @@ class _HomepageState extends State<Homepage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(Icons.menu, size: 35),
+              Image.asset('assets/images/tov.png', height: size.height / 13),
+              Icon(Icons.search, size: 35),
+            ],
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Icon(Icons.menu, size: 35),
-                    Image.asset(
-                      'assets/images/tov.png',
-                      height: size.height / 13,
-                    ),
-                    Icon(Icons.search, size: 35),
-                  ],
-                ),
                 SizedBox(height: 20),
                 Stack(
                   children: [
@@ -322,13 +323,10 @@ class _HomepageState extends State<Homepage> {
                               right: index == 0 ? BodyMargin : 15,
                             ),
                             child: SizedBox(
-                              child: Center(
-                                child: Text(
-                                  Pod[index].name,
-
-                                  style: TextStyles.SubTitle2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                              child: Text(
+                                Pod[index].name,
+                                style: TextStyles.SubTitle2,
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ),
