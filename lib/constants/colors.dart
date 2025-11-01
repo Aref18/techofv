@@ -30,4 +30,11 @@ class gradients {
       Color.fromARGB(0, 0, 0, 0),
     ],
   );
+
+  static const ButtonNavGR = LinearGradient(
+    colors: [
+      Color.fromARGB(0, 255, 255, 255),
+      Color.fromARGB(255, 255, 255, 255),
+    ],
+  );
 }
