@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techofv/Models/fake_data.dart';
+import 'package:techofv/View/HomePagePoster.dart';
+import 'package:techofv/View/HomePageTagList.dart';
 import 'package:techofv/constants/colors.dart';
 import 'package:techofv/constants/text_styles.dart';
 
@@ -27,111 +29,14 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20),
-            Stack(
-              children: [
-                Container(
-                  width: size.width / 1.1,
-                  height: imageHeight,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(HomePagePoster["ImageAsset"]),
-                    ),
-                  ),
-                  foregroundDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: LinearGradient(
-                      colors: gradients.poster.colors,
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 0,
-                  right: 0,
-                  bottom: 8,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            HomePagePoster["Writer"] +
-                                " - " +
-                                HomePagePoster["Data"],
-                            style: TextStyles.SubTitle,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                HomePagePoster["View"],
-                                style: TextStyles.SubTitle,
-                              ),
-                              SizedBox(width: 8),
-                              Icon(
-                                Icons.remove_red_eye,
-                                color: Colors.white,
-                                size: 16,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Text(HomePagePoster["Title"], style: TextStyles.Title),
-                    ],
-                  ),
-                ),
-              ],
+            HomePagePoster(
+              size: size,
+              imageHeight: imageHeight,
+              poster: HomePagePosters[0],
             ),
             SizedBox(height: 25),
 
-            SizedBox(
-              height: 80,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: TagList.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(
-                        0,
-                        5,
-                        index == 0 ? BodyMargin : 34,
-                        20,
-                      ),
-                      child: Container(
-                        height: 80,
-
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: gradients.Tags.colors,
-                            begin: Alignment.centerRight,
-                            end: Alignment.centerLeft,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-                          child: Row(
-                            children: [
-                              Icon(Icons.tag, color: Colors.white),
-                              SizedBox(width: 8),
-                              Text(
-                                TagList[index].Title,
-                                style: TextStyles.TagStyle,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+            HomePageTagList(BodyMargin: BodyMargin),
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 35),
