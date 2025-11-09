@@ -3,8 +3,9 @@ import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/View/HomePageBlogList.dart';
 import 'package:techofv/View/HomePagePodcastList.dart';
 import 'package:techofv/View/HomePagePoster.dart';
+import 'package:techofv/View/HomePageSeemore.dart';
+import 'package:techofv/View/HomePageSeemorePodcats.dart';
 import 'package:techofv/View/HomePageTagList.dart';
-import 'package:techofv/constants/text_styles.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -39,16 +40,7 @@ class HomePage extends StatelessWidget {
 
             HomePageTagList(BodyMargin: BodyMargin),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(right: 35),
-              child: Row(
-                children: [
-                  Icon(Icons.edit, size: 35, color: Colors.deepPurple),
-                  SizedBox(width: 10),
-                  Text('مشاهده داغ ترین نوشته ها', style: TextStyles.Title2),
-                ],
-              ),
-            ),
+            HomePageSeemore(),
             SizedBox(height: 15),
 
             //lists of hottest news
@@ -58,19 +50,7 @@ class HomePage extends StatelessWidget {
               BodyMargin: BodyMargin,
               imageHeight: imageHeight,
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 35),
-              child: SizedBox(
-                height: 80,
-                child: Row(
-                  children: [
-                    Icon(Icons.mic, size: 35, color: Colors.deepPurple),
-                    SizedBox(width: 10),
-                    Text('مشاهده داغ ترین پادکست ها', style: TextStyles.Title2),
-                  ],
-                ),
-              ),
-            ),
+            HomePageSeemorePodcasts(),
             SizedBox(height: 10),
             HomePagePodcastList(
               isLandscape: isLandscape,
