@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techofv/screens/splashscreen.dart';
+import 'package:techofv/View/splashscreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {

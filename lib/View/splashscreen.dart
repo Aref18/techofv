@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:techofv/screens/HomePage.dart';
+import 'package:techofv/View/NavBotton.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const Homepage()),
+        MaterialPageRoute(builder: (context) => const NavBotton()),
       );
     });
   }
