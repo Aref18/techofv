@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/View/HomePage.dart';
-import 'package:techofv/constants/colors.dart';
-import 'package:techofv/constants/text_styles.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({
