@@ -34,4 +34,10 @@ class TextStyles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+
+  static const TextStyle ProName = TextStyle(color: Colors.black, fontSize: 25);
+  static const TextStyle ProGmail = TextStyle(
+    color: Colors.black,
+    fontSize: 15,
+  );
 }

@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:techofv/View/MainScreen.dart';
+import 'package:techofv/Models/date_models.dart';
+import 'package:techofv/View/HomeMain.dart';
+
 import 'package:techofv/constants/colors.dart';
+import 'package:techofv/constants/text_styles.dart';
 
-class NavBotton extends StatefulWidget {
-  const NavBotton({super.key});
-
-  @override
-  State<NavBotton> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<NavBotton> {
-  @override
-  void initState() {
-    _updateStatud();
-    super.initState();
-  }
-
-  void _updateStatud() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-  }
+class Profilescreen extends StatelessWidget {
+  final BlogModel blog;
+  const Profilescreen({super.key, required this.blog});
 
   @override
   Widget build(BuildContext context) {
@@ -28,46 +16,61 @@ class _HomepageState extends State<NavBotton> {
 
     bool isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
-
     double imageHeight = isLandscape ? size.width / 3 : size.height / 4.7;
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
-
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              highlightColor: Colors.transparent,
-              onPressed: () {},
-              icon: Icon(Icons.menu, size: 35),
-            ),
-            Image.asset('assets/images/tov.png', height: size.height / 13),
-            IconButton(
-              highlightColor: Colors.transparent,
-
-              onPressed: () {},
-              icon: Icon(Icons.search, size: 35),
-            ),
-          ],
-        ),
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
-          MainScreen(
-            size: size,
-            imageHeight: imageHeight,
-            BodyMargin: BodyMargin,
-            isLandscape: isLandscape,
-            NavButton: NavButton,
+          Column(
+            children: [
+              CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage(blog.WriterimageUrl),
+              ),
+
+              SizedBox(height: 20),
+
+              Text('edit'),
+              SizedBox(height: 50),
+              Text('سید عارف موسوی', style: TextStyles.ProName),
+              SizedBox(height: 20),
+              Text('arefmoosavi@gmail.com', style: TextStyles.ProGmail),
+              SizedBox(height: 50),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                child: Divider(thickness: 2),
+              ),
+              SizedBox(height: 10),
+              Text('favorite writes'),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                child: Divider(thickness: 2),
+              ),
+              SizedBox(height: 10),
+              Text('favorite Podcasts'),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                child: Divider(thickness: 2),
+              ),
+              SizedBox(height: 10),
+              Text("Logout"),
+              SizedBox(height: 10),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                child: Divider(thickness: 2),
+              ),
+            ],
           ),
+
           Positioned(
-            bottom: 0,
             left: 0,
             right: 0,
+            bottom: 0,
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -97,7 +100,12 @@ class _HomepageState extends State<NavBotton> {
                     children: [
                       IconButton(
                         highlightColor: Colors.transparent,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeMain()),
+                          );
+                        },
                         icon: Icon(Icons.home, color: Colors.white, size: 30),
                       ),
                       IconButton(

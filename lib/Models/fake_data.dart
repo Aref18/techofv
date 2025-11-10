@@ -26,8 +26,7 @@ List<BlogModel> blogmodel = [
         'https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png',
     title: 'مرد عنکبوتی کیست ؟آشنایی با آن و تاریچه اش',
     writer: 'جواد خیابانی',
-    WriterimageUrl:
-        'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png',
+    WriterimageUrl: 'assets/images/avatar.png',
     date: '20 روز پیش',
     content: """
 مرد عنکبوتی با نام واقعی پیتِر بِنجامین پارکِر، یک شخصیت تخیلی ابرقهرمان در کتاب‌های داستان مصورآمریکایی است که توسط ماروِل کامیکْس منتشر می‌شود. این شخصیت حاصل همکاری اِستَن لی، نویسنده و خالق چندین ابرقهرمان معروف مارول، و اِستیو دیتکو است

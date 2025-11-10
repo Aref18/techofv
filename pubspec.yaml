@@ -69,6 +69,8 @@ flutter:
     - assets/images/banner.jpg
     - assets/images/banner1.jpg
     - assets/icons/hashtag.png
+    - assets/images/avatar.png
+
 
   #   - images/a_dot_ham.jpeg
 
