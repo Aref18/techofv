@@ -11,6 +11,7 @@ class divider extends StatelessWidget {
       thickness: 2,
       indent: size.width / 6,
       endIndent: size.width / 6,
+      color: Colors.black45,
     );
   }
 }

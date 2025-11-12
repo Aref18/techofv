@@ -38,15 +38,15 @@ class Profilescreen extends StatelessWidget {
 
               divider(size: size),
               SizedBox(height: 10),
-              Text('favorite writes'),
+              InkWell(onTap: () {}, child: Text('favorite writes')),
               SizedBox(height: 10),
               divider(size: size),
               SizedBox(height: 10),
-              Text('favorite Podcasts'),
+              InkWell(onTap: () {}, child: Text('favorite Podcasts')),
               SizedBox(height: 10),
               divider(size: size),
               SizedBox(height: 10),
-              Text("Logout"),
+              InkWell(onTap: () {}, child: Text("Logout")),
               SizedBox(height: 10),
 
               divider(size: size),
