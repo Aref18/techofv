@@ -8,10 +8,12 @@ class ButtonNav extends StatelessWidget {
     super.key,
     required this.NavButton,
     required this.BodyMargin,
+    required this.size,
   });
 
   final double NavButton;
   final double BodyMargin;
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,8 @@ class ButtonNav extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Profilescreen(blog: blogmodel[0]),
+                        builder: (context) =>
+                            Profilescreen(blog: blogmodel[0], size: size),
                       ),
                     );
                   },

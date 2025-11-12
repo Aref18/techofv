@@ -95,7 +95,7 @@ class _HomepageState extends State<HomeMain> {
             ),
           ),
 
-          ButtonNav(NavButton: NavButton, BodyMargin: BodyMargin),
+          ButtonNav(NavButton: NavButton, BodyMargin: BodyMargin, size: size),
         ],
       ),
     );
