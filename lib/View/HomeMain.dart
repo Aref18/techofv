@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:techofv/View/ProfileScreen.dart';
-import 'package:techofv/View/HomePage.dart';
 import 'package:techofv/Models/fake_data.dart';
-import 'package:techofv/constants/colors.dart';
+import 'package:techofv/View/ButtonNav.dart';
+import 'package:techofv/View/HomePageBlogList.dart';
+import 'package:techofv/View/HomePagePodcastList.dart';
+import 'package:techofv/View/HomePagePoster.dart';
+import 'package:techofv/View/HomePageSeemore.dart';
+import 'package:techofv/View/HomePageSeemorePodcats.dart';
+import 'package:techofv/View/HomePageTagList.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});
 
   @override
-  State<HomeMain> createState() => _HomeMainState();
+  State<HomeMain> createState() => _HomepageState();
 }
 
-class _HomeMainState extends State<HomeMain> {
-  int _selectedIndex = 0;
-
+class _HomepageState extends State<HomeMain> {
   @override
   void initState() {
-    _updateStatus();
+    _updateStatud();
     super.initState();
   }
 
-  void _updateStatus() {
+  void _updateStatud() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
   }
 
@@ -29,139 +31,72 @@ class _HomeMainState extends State<HomeMain> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     double BodyMargin = size.width / 15;
+
     bool isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
 
     double imageHeight = isLandscape ? size.width / 3 : size.height / 4.7;
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
 
-    final List<Widget> pages = [
-      HomePage(
-        size: size,
-        imageHeight: imageHeight,
-        BodyMargin: BodyMargin,
-        isLandscape: isLandscape,
-        NavButton: NavButton,
-      ),
-      Profilescreen(blog: blogmodel[0]),
-    ];
-
     return Scaffold(
       backgroundColor: Colors.white,
-
-      // 👇 فقط وقتی صفحه خانه انتخاب شده AppBar نشون بده
-      appBar: _selectedIndex == 0
-          ? AppBar(
-              backgroundColor: Colors.white,
-              scrolledUnderElevation: 0,
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    highlightColor: Colors.transparent,
-                    onPressed: () {},
-                    icon: const Icon(Icons.menu, size: 35),
-                  ),
-                  Image.asset(
-                    'assets/images/tov.png',
-                    height: size.height / 13,
-                  ),
-                  IconButton(
-                    highlightColor: Colors.transparent,
-                    onPressed: () {},
-                    icon: const Icon(Icons.search, size: 35),
-                  ),
-                ],
-              ),
-            )
-          : null, // در غیر این صورت AppBar حذف میشه
-
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              highlightColor: Colors.transparent,
+              onPressed: () {},
+              icon: Icon(Icons.menu, size: 35),
+            ),
+            Image.asset('assets/images/tov.png', height: size.height / 13),
+            IconButton(
+              highlightColor: Colors.transparent,
+              onPressed: () {},
+              icon: Icon(Icons.search, size: 35),
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
-          pages[_selectedIndex],
-          ButtonNav(
-            NavButton: NavButton,
-            BodyMargin: BodyMargin,
-            selectedIndex: _selectedIndex,
-            onItemTap: (index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ButtonNav extends StatelessWidget {
-  const ButtonNav({
-    super.key,
-    required this.NavButton,
-    required this.BodyMargin,
-    required this.selectedIndex,
-    required this.onItemTap,
-  });
-
-  final double NavButton;
-  final double BodyMargin;
-  final int selectedIndex;
-  final ValueChanged<int> onItemTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: gradients.ButtonNavGR.colors,
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        height: NavButton,
-        child: Padding(
-          padding: EdgeInsets.only(
-            bottom: 30,
-            left: BodyMargin,
-            right: BodyMargin,
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                colors: gradients.ButtonNav.colors,
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          SingleChildScrollView(
+            child: Column(
               children: [
-                _navItem(Icons.home, 0),
-                _navItem(Icons.edit_note, 1),
-                _navItem(Icons.person, 2),
+                SizedBox(height: 30),
+                HomePagePoster(
+                  size: size,
+                  imageHeight: imageHeight,
+                  poster: HomePagePosters[0],
+                ),
+                SizedBox(height: 25),
+                HomePageTagList(BodyMargin: BodyMargin),
+                SizedBox(height: 20),
+                HomePageSeemore(),
+                SizedBox(height: 15),
+                HomePageBlogList(
+                  isLandscape: isLandscape,
+                  size: size,
+                  BodyMargin: BodyMargin,
+                  imageHeight: imageHeight,
+                ),
+                HomePageSeemorePodcasts(),
+                SizedBox(height: 10),
+                HomePagePodcastList(
+                  isLandscape: isLandscape,
+                  size: size,
+                  BodyMargin: BodyMargin,
+                  imageHeight: imageHeight,
+                ),
+                SizedBox(height: NavButton),
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
 
-  Widget _navItem(IconData icon, int index) {
-    final bool isSelected = index == selectedIndex;
-    return IconButton(
-      highlightColor: Colors.transparent,
-      onPressed: () => onItemTap(index),
-      icon: Icon(
-        icon,
-        color: isSelected ? Colors.yellowAccent : Colors.white,
-        size: isSelected ? 35 : 30,
+          ButtonNav(NavButton: NavButton, BodyMargin: BodyMargin),
+        ],
       ),
     );
   }
