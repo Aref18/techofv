@@ -38,18 +38,53 @@ class Profilescreen extends StatelessWidget {
 
               divider(size: size),
               SizedBox(height: 10),
-              InkWell(onTap: () {}, child: Text('favorite writes')),
-              SizedBox(height: 10),
-              divider(size: size),
-              SizedBox(height: 10),
-              InkWell(onTap: () {}, child: Text('favorite Podcasts')),
-              SizedBox(height: 10),
-              divider(size: size),
-              SizedBox(height: 10),
-              InkWell(onTap: () {}, child: Text("Logout")),
-              SizedBox(height: 10),
+              InkWell(
+                onTap: () {},
+                splashColor: Colors.blueAccent,
 
+                child: SizedBox(
+                  height: 40,
+                  child: Center(
+                    child: Text(
+                      'مقالات مورد علاقه من',
+                      style: TextStyles.SubTitle2,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
               divider(size: size),
+              SizedBox(height: 10),
+              InkWell(
+                onTap: () {},
+                splashColor: Colors.blueAccent,
+                child: SizedBox(
+                  height: 40,
+                  child: Center(
+                    child: Text(
+                      'پادکست های مورد علاقه من',
+                      style: TextStyles.SubTitle2,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              divider(size: size),
+              SizedBox(height: 10),
+              InkWell(
+                onTap: () {},
+                splashColor: Colors.blueAccent,
+                child: SizedBox(
+                  height: 40,
+                  child: Center(
+                    child: Text(
+                      "خروج از حساب کاربری",
+                      style: TextStyles.SubTitle2,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
             ],
           ),
         ],
