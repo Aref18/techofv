@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:techofv/Models/fake_data.dart';
-import 'package:techofv/View/HomeMain.dart';
 import 'package:techofv/View/ProfileScreen.dart';
 import 'package:techofv/constants/colors.dart';
 
@@ -49,12 +48,7 @@ class ButtonNav extends StatelessWidget {
               children: [
                 IconButton(
                   highlightColor: Colors.transparent,
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeMain()),
-                    );
-                  },
+                  onPressed: () {},
                   icon: Icon(Icons.home, color: Colors.white, size: 30),
                 ),
                 IconButton(
@@ -63,7 +57,7 @@ class ButtonNav extends StatelessWidget {
                   icon: Icon(Icons.edit_note, color: Colors.white, size: 30),
                 ),
                 IconButton(
-                  highlightColor: Colors.transparent,
+                  highlightColor: const Color.fromARGB(0, 133, 70, 70),
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
