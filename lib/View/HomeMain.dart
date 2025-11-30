@@ -40,26 +40,7 @@ class _HomepageState extends State<HomeMain> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              highlightColor: Colors.transparent,
-              onPressed: () {},
-              icon: Icon(Icons.menu, size: 35),
-            ),
-            Image.asset('assets/images/tov.png', height: size.height / 13),
-            IconButton(
-              highlightColor: Colors.transparent,
-              onPressed: () {},
-              icon: Icon(Icons.search, size: 35),
-            ),
-          ],
-        ),
-      ),
+
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -90,12 +71,21 @@ class _HomepageState extends State<HomeMain> {
                   BodyMargin: BodyMargin,
                   imageHeight: imageHeight,
                 ),
-                SizedBox(height: NavButton),
+                SizedBox(height: NavButton), // ار
               ],
             ),
           ),
 
-          ButtonNav(NavButton: NavButton, BodyMargin: BodyMargin, size: size),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: ButtonNav(
+              NavButton: NavButton,
+              BodyMargin: BodyMargin,
+              size: size,
+            ),
+          ),
         ],
       ),
     );

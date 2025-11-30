@@ -61,13 +61,13 @@ class ButtonNav extends StatelessWidget {
                 IconButton(
                   highlightColor: const Color.fromARGB(0, 133, 70, 70),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            Profilescreen(blog: blogmodel[0], size: size),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) =>
+                    //         Profilescreen(blog: blogmodel[0], size: size),
+                    //   ),
+                    // );
                   },
                   icon: Icon(Icons.person, color: Colors.white, size: 30),
                 ),

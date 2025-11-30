@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:techofv/View/HomeMain.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:techofv/View/main_screen.dart';
 
 class Splashscreen extends StatefulWidget {
   Splashscreen({super.key});
@@ -17,9 +17,9 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeMain()),
-      );
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (context) => MainScreen()));
     });
   }
 
