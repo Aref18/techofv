@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:techofv/Models/fake_data.dart';
-import 'package:techofv/View/ButtonNav.dart';
 import 'package:techofv/View/HomePageBlogList.dart';
 import 'package:techofv/View/HomePagePodcastList.dart';
 import 'package:techofv/View/HomePagePoster.dart';
@@ -73,17 +72,6 @@ class _HomepageState extends State<HomeMain> {
                 ),
                 SizedBox(height: NavButton), // ار
               ],
-            ),
-          ),
-
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: ButtonNav(
-              NavButton: NavButton,
-              BodyMargin: BodyMargin,
-              size: size,
             ),
           ),
         ],

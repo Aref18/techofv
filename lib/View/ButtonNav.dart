@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:techofv/Models/fake_data.dart';
-import 'package:techofv/View/ProfileScreen.dart';
 import 'package:techofv/constants/colors.dart';
 
 class ButtonNav extends StatelessWidget {
@@ -9,11 +7,13 @@ class ButtonNav extends StatelessWidget {
     required this.NavButton,
     required this.BodyMargin,
     required this.size,
+    required this.ChangeScreen,
   });
 
   final double NavButton;
   final double BodyMargin;
   final Size size;
+  final Function(int) ChangeScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ButtonNav extends StatelessWidget {
               children: [
                 IconButton(
                   highlightColor: Colors.transparent,
-                  onPressed: () {},
+                  onPressed: () => ChangeScreen(0),
                   icon: Icon(Icons.home, color: Colors.white, size: 30),
                 ),
                 IconButton(
@@ -60,15 +60,7 @@ class ButtonNav extends StatelessWidget {
                 ),
                 IconButton(
                   highlightColor: const Color.fromARGB(0, 133, 70, 70),
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) =>
-                    //         Profilescreen(blog: blogmodel[0], size: size),
-                    //   ),
-                    // );
-                  },
+                  onPressed: () => ChangeScreen(1),
                   icon: Icon(Icons.person, color: Colors.white, size: 30),
                 ),
               ],
