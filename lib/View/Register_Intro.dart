@@ -38,26 +38,26 @@ class _RegisterIntroState extends State<RegisterIntro> {
             Padding(
               padding: const EdgeInsets.only(top: 40),
               child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: WidgetStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  backgroundColor: WidgetStateColor.resolveWith((states) {
-                    if (states.contains(WidgetState.pressed)) {
-                      return Colors.deepPurpleAccent;
-                    }
-                    return Colors.deepPurple;
-                  }),
-                  textStyle: WidgetStateTextStyle.resolveWith((states) {
-                    if (states.contains(WidgetState.pressed)) {
-                      return TextStyles.RegButton.copyWith(fontSize: 35);
-                    }
-                    return TextStyles.RegButton.copyWith(fontSize: 30);
-                  }),
-                ),
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        height: 250,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: const Radius.circular(10.0),
+                              topRight: const Radius.circular(10.0),
+                            ),
+                          ),
+                          child: Center(child: Text("This is a modal sheet")),
+                        ),
+                      );
+                    },
+                  );
+                },
                 child: Text('بزن بریم', style: TextStyle(color: Colors.white)),
               ),
             ),
