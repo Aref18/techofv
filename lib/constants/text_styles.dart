@@ -40,4 +40,10 @@ class TextStyles {
     color: Colors.black,
     fontSize: 15,
   );
+
+  static const TextStyle RegButton = TextStyle(
+    color: Colors.white,
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+  );
 }

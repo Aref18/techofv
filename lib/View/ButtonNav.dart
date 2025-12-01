@@ -55,12 +55,12 @@ class ButtonNav extends StatelessWidget {
                 ),
                 IconButton(
                   highlightColor: Colors.transparent,
-                  onPressed: () {},
+                  onPressed: () => ChangeScreen(1),
                   icon: Icon(Icons.edit_note, color: Colors.white, size: 30),
                 ),
                 IconButton(
                   highlightColor: const Color.fromARGB(0, 133, 70, 70),
-                  onPressed: () => ChangeScreen(1),
+                  onPressed: () => ChangeScreen(2),
                   icon: Icon(Icons.person, color: Colors.white, size: 30),
                 ),
               ],

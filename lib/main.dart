@@ -22,7 +22,7 @@ class TechOfV extends StatelessWidget {
         Locale('fa'), // farsi
       ],
       debugShowCheckedModeBanner: false,
-      home: RegisterIntro(),
+      home: Splashscreen(),
     );
   }
 }

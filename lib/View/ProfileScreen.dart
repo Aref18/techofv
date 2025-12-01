@@ -10,12 +10,13 @@ class Profilescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Stack(
           children: [
             Column(
               children: [
+                SizedBox(height: 50),
                 CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage(blog.WriterimageUrl),

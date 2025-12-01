@@ -3,6 +3,7 @@ import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/View/ButtonNav.dart';
 import 'package:techofv/View/HomeMain.dart';
 import 'package:techofv/View/ProfileScreen.dart';
+import 'package:techofv/View/Register_Intro.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({super.key});
@@ -50,6 +51,7 @@ class _MainScreenState extends State<MainScreen> {
 
               children: [
                 HomeMain(),
+                RegisterIntro(),
                 Profilescreen(blog: blogmodel[0], size: size),
               ],
             ),
