@@ -12,6 +12,7 @@ class RegisterIntro extends StatefulWidget {
 class _RegisterIntroState extends State<RegisterIntro> {
   @override
   Widget build(BuildContext context) {
+    var Size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -43,7 +44,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
                     context: context,
                     builder: (context) {
                       return Container(
-                        height: 250,
+                        height: Size.height / 2.5,
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -52,7 +53,32 @@ class _RegisterIntroState extends State<RegisterIntro> {
                               topRight: const Radius.circular(10.0),
                             ),
                           ),
-                          child: Center(child: Text("This is a modal sheet")),
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'لظفا ایمیلتو وارد کن',
+                                  style: TextStyles.ProName,
+                                ),
+                                SizedBox(height: 30),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    24,
+                                    0,
+                                    24,
+                                    0,
+                                  ),
+                                  child: TextField(
+                                    textAlign: TextAlign.center,
+                                    decoration: InputDecoration(
+                                      hintText: 'techofV@gmail.com',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       );
                     },

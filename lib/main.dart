@@ -22,6 +22,14 @@ class TechOfV extends StatelessWidget {
         Locale('fa'), // farsi
       ],
       theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide(width: 2),
+          ),
+          filled: true,
+          fillColor: Colors.white,
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             shape: WidgetStateProperty.all(
