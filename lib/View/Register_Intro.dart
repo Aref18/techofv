@@ -40,49 +40,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
               padding: const EdgeInsets.only(top: 40),
               child: ElevatedButton(
                 onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        height: Size.height / 2.5,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: const Radius.circular(10.0),
-                              topRight: const Radius.circular(10.0),
-                            ),
-                          ),
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'لظفا ایمیلتو وارد کن',
-                                  style: TextStyles.ProName,
-                                ),
-                                SizedBox(height: 30),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(
-                                    24,
-                                    0,
-                                    24,
-                                    0,
-                                  ),
-                                  child: TextField(
-                                    textAlign: TextAlign.center,
-                                    decoration: InputDecoration(
-                                      hintText: 'techofV@gmail.com',
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  );
+                  _showModalBottomSheet(context, Size);
                 },
                 child: Text('بزن بریم', style: TextStyle(color: Colors.white)),
               ),
@@ -90,6 +48,58 @@ class _RegisterIntroState extends State<RegisterIntro> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> _showModalBottomSheet(BuildContext context, Size Size) {
+    return showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Container(
+            height: Size.height / 2.5,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: const Radius.circular(10.0),
+                  topRight: const Radius.circular(10.0),
+                ),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('لظفا ایمیلتو وارد کن', style: TextStyles.ProName),
+                    SizedBox(height: 30),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+                      child: TextField(
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                          hintText: 'techofV@gmail.com',
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'ادامه',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
