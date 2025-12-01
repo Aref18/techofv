@@ -35,6 +35,11 @@ class _RegisterIntroState extends State<RegisterIntro> {
             ),
             ElevatedButton(
               style: ButtonStyle(
+                shape: WidgetStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
                 backgroundColor: WidgetStateColor.resolveWith((states) {
                   if (states.contains(WidgetState.pressed)) {
                     return Colors.lightBlueAccent;
@@ -43,9 +48,9 @@ class _RegisterIntroState extends State<RegisterIntro> {
                 }),
                 textStyle: WidgetStateTextStyle.resolveWith((states) {
                   if (states.contains(WidgetState.pressed)) {
-                    return const TextStyle(fontSize: 25);
+                    return TextStyles.Title;
                   }
-                  return const TextStyle(fontSize: 20);
+                  return const TextStyle(fontSize: 30);
                 }),
               ),
               onPressed: () {},
