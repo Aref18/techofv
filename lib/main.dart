@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techofv/View/Register_Intro.dart';
 import 'package:techofv/View/splashscreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -21,7 +22,7 @@ class TechOfV extends StatelessWidget {
         Locale('fa'), // farsi
       ],
       debugShowCheckedModeBanner: false,
-      home: Splashscreen(),
+      home: RegisterIntro(),
     );
   }
 }

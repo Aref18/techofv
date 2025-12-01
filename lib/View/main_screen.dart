@@ -21,11 +21,6 @@ class _MainScreenState extends State<MainScreen> {
     bool isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
-
-    List<Widget> TechScreens = [
-      HomeMain(),
-      Profilescreen(blog: blogmodel[0], size: size),
-    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -49,7 +44,16 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Stack(
         children: [
-          Positioned.fill(child: TechScreens[SelectedIndex]),
+          Positioned.fill(
+            child: IndexedStack(
+              index: SelectedIndex,
+
+              children: [
+                HomeMain(),
+                Profilescreen(blog: blogmodel[0], size: size),
+              ],
+            ),
+          ),
           Positioned(
             bottom: 0,
             left: 0,
