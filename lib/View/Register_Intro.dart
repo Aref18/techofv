@@ -46,9 +46,9 @@ class _RegisterIntroState extends State<RegisterIntro> {
                   ),
                   backgroundColor: WidgetStateColor.resolveWith((states) {
                     if (states.contains(WidgetState.pressed)) {
-                      return Colors.lightBlueAccent;
+                      return Colors.deepPurpleAccent;
                     }
-                    return Colors.blue;
+                    return Colors.deepPurple;
                   }),
                   textStyle: WidgetStateTextStyle.resolveWith((states) {
                     if (states.contains(WidgetState.pressed)) {

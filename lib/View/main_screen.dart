@@ -48,7 +48,6 @@ class _MainScreenState extends State<MainScreen> {
           Positioned.fill(
             child: IndexedStack(
               index: SelectedIndex,
-
               children: [
                 HomeMain(),
                 RegisterIntro(),
