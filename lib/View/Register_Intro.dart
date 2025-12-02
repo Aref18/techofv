@@ -13,6 +13,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
   @override
   Widget build(BuildContext context) {
     var Size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -79,6 +80,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                       child: TextField(
+                        onChanged: (value) {},
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
                           hintText: 'techofV@gmail.com',
