@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:techofv/View/My_Category%20.dart';
 import 'package:techofv/constants/text_styles.dart';
 import 'package:validators/validators.dart';
 
@@ -152,7 +153,12 @@ class _RegisterIntroState extends State<RegisterIntro> {
                     ),
                     SizedBox(height: 30),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyCategory()),
+                        );
+                      },
                       child: Text(
                         'ادامه',
                         style: TextStyle(color: Colors.white),
