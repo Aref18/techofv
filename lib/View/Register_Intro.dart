@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:techofv/constants/text_styles.dart';
+import 'package:validators/validators.dart';
 
 class RegisterIntro extends StatefulWidget {
   const RegisterIntro({super.key});
@@ -80,11 +81,73 @@ class _RegisterIntroState extends State<RegisterIntro> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                       child: TextField(
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          print(
+                            value + "isEmail :" + isEmail(value).toString(),
+                          );
+                        },
                         textAlign: TextAlign.center,
                         decoration: InputDecoration(
                           hintText: 'techofV@gmail.com',
                         ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        _activatecode(context, Size);
+                      },
+                      child: Text(
+                        'ادامه',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Future<dynamic> _activatecode(BuildContext context, Size Size) {
+    return showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Container(
+            height: Size.height / 2.5,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: const Radius.circular(10.0),
+                  topRight: const Radius.circular(10.0),
+                ),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('لظفا کد را وارد کن', style: TextStyles.ProName),
+                    SizedBox(height: 30),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+                      child: TextField(
+                        onChanged: (value) {
+                          print(
+                            value + "isEmail :" + isEmail(value).toString(),
+                          );
+                        },
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(hintText: '........'),
                       ),
                     ),
                     SizedBox(height: 30),
