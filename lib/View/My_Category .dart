@@ -3,8 +3,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/constants/text_styles.dart';
 
-class MyCategory extends StatelessWidget {
+class MyCategory extends StatefulWidget {
   MyCategory({super.key});
+
+  @override
+  State<MyCategory> createState() => _MyCategoryState();
+}
+
+class _MyCategoryState extends State<MyCategory> {
+  List AddTags = [];
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +63,27 @@ class MyCategory extends StatelessWidget {
                         crossAxisCount: 2,
                       ),
                       itemBuilder: (context, index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(35),
-                            color: Colors.black,
-                          ),
-                          child: Center(
-                            child: Text(
-                              "# " + TagList[index].Title,
-                              style: TextStyles.HashTgs,
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              if (AddTags.length < 6) {
+                                if (!AddTags.contains(TagList[index])) {
+                                  AddTags.add(TagList[index]);
+                                }
+                              }
+                            });
+                          },
+
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(35),
+                              color: Colors.black,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "# " + TagList[index].Title,
+                                style: TextStyles.HashTgs,
+                              ),
                             ),
                           ),
                         );
@@ -74,6 +93,45 @@ class MyCategory extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Image.asset('assets/images/flash.png', scale: 8),
+                SizedBox(height: 20),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: SizedBox(
+                    height: 90,
+                    width: double.infinity,
+                    child: GridView.builder(
+                      itemCount: AddTags.length,
+                      scrollDirection: Axis.horizontal,
+                      physics: ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 0.34,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 5,
+                        crossAxisCount: 2,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(35),
+                            color:
+                                AddTags.length > 6 &&
+                                    !AddTags.contains(TagList[index])
+                                ? Colors.grey
+                                : const Color.fromARGB(255, 50, 61, 67),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "# ${AddTags[index].Title}",
+                              style: TextStyles.HashTgs,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
