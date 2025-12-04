@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:techofv/Models/fake_data.dart';
 import 'package:techofv/constants/text_styles.dart';
 
 class MyCategory extends StatelessWidget {
@@ -40,32 +41,39 @@ class MyCategory extends StatelessWidget {
                 SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: GridView.builder(
-                    itemCount: 6,
-                    physics: ClampingScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 2.5,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 5,
-                      crossAxisCount: 3,
-                    ),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(35),
-                          color: Colors.black,
-                        ),
-                        child: Center(
-                          child: Text(
-                            '# برنامه نویسی',
-                            style: TextStyles.HashTgs,
+                  child: SizedBox(
+                    height: 90,
+                    width: double.infinity,
+                    child: GridView.builder(
+                      itemCount: TagList.length,
+                      scrollDirection: Axis.horizontal,
+                      physics: ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 0.34,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 5,
+                        crossAxisCount: 2,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(35),
+                            color: Colors.black,
                           ),
-                        ),
-                      );
-                    },
+                          child: Center(
+                            child: Text(
+                              "# " + TagList[index].Title,
+                              style: TextStyles.HashTgs,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
+                SizedBox(height: 20),
+                Image.asset('assets/images/flash.png', scale: 8),
               ],
             ),
           ),
