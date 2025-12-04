@@ -66,7 +66,7 @@ class _MyCategoryState extends State<MyCategory> {
                         return InkWell(
                           onTap: () {
                             setState(() {
-                              if (AddTags.length < 6) {
+                              if (AddTags.length <= 6) {
                                 if (!AddTags.contains(TagList[index])) {
                                   AddTags.add(TagList[index]);
                                 }
