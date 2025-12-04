@@ -32,28 +32,40 @@ class MyCategory extends StatelessWidget {
                     decoration: InputDecoration(hintText: "نام و نام خانوادگی"),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Text(
                   'دسته بندی هایی که دوست داری را انتخاب کن',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 15),
-                // ListView.builder(
-                //   itemCount: 6,
-                //   itemBuilder: (context, index) {
-                //     return Container(
-                //       height: 50,
-                //       width: 50,
-                //       color: Colors.black,
-                //       child: Center(
-                //         child: Text(
-                //           'برنامه نویسی#',
-                //           style: TextStyles.TextButton,
-                //         ),
-                //       ),
-                //     );
-                //   },
-                // ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: GridView.builder(
+                    itemCount: 6,
+                    physics: ClampingScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 2.5,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 5,
+                      crossAxisCount: 3,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(35),
+                          color: Colors.black,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '# برنامه نویسی',
+                            style: TextStyles.HashTgs,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),

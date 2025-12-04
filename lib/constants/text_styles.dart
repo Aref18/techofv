@@ -46,4 +46,9 @@ class TextStyles {
     fontSize: 25,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle HashTgs = TextStyle(
+    fontSize: 15,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
 }
