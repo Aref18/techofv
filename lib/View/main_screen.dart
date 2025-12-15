@@ -5,7 +5,6 @@ import 'package:techofv/View/HomeMain.dart';
 import 'package:techofv/View/ProfileScreen.dart';
 import 'package:techofv/View/Register_Intro.dart';
 import 'package:techofv/View/my_component.dart';
-import 'package:techofv/constants/text_styles.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({super.key});
@@ -26,47 +25,50 @@ class _MainScreenState extends State<MainScreen> {
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
     return Scaffold(
       drawer: Drawer(
-        child: ListView(
-          children: [
-            Container(
-              child: Image.asset(
-                'assets/images/tov.png',
-                height: size.height / 8,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8),
+          child: ListView(
+            children: [
+              Container(
+                child: Image.asset(
+                  'assets/images/tov.png',
+                  height: size.height / 8,
+                ),
               ),
-            ),
-            ListTile(
-              title: Text(
-                'پروفایل کاربری',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ListTile(
+                title: Text(
+                  'پروفایل کاربری',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
               ),
-              onTap: () {},
-            ),
-            divider(size: size),
-            ListTile(
-              title: Text(
-                'درباره تک آو وی',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              divider(size: size),
+              ListTile(
+                title: Text(
+                  'درباره تک آو وی',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
               ),
-              onTap: () {},
-            ),
-            divider(size: size),
+              divider(size: size),
 
-            ListTile(
-              title: Text(
-                'اشتراک گذاری تک آو وی',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ListTile(
+                title: Text(
+                  'اشتراک گذاری تک آو وی',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
               ),
-              onTap: () {},
-            ),
-            divider(size: size),
-            ListTile(
-              title: Text(
-                'تک آو وی در گیت هاب',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              divider(size: size),
+              ListTile(
+                title: Text(
+                  'تک آو وی در گیت هاب',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
               ),
-              onTap: () {},
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       key: _scaffoldkey,
