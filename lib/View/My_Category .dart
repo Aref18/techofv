@@ -45,92 +45,49 @@ class _MyCategoryState extends State<MyCategory> {
                   'دسته بندی هایی که دوست داری را انتخاب کن',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: SizedBox(
-                    height: 90,
-                    width: double.infinity,
-                    child: GridView.builder(
-                      itemCount: TagList.length,
-                      scrollDirection: Axis.horizontal,
-                      physics: ClampingScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 0.34,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 5,
-                        crossAxisCount: 2,
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: TagList.map((tag) {
+                    return ElevatedButton(
+                      child: Text("# ${tag.Title}", style: TextStyles.HashTgs),
+                      style: ButtonStyle(
+                        foregroundColor: WidgetStateProperty.all<Color>(
+                          Colors.black,
+                        ),
                       ),
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            setState(() {
-                              if (AddTags.length <= 6) {
-                                if (!AddTags.contains(TagList[index])) {
-                                  AddTags.add(TagList[index]);
-                                }
-                              }
-                            });
-                          },
-
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(35),
-                              color: Colors.black,
-                            ),
-                            child: Center(
-                              child: Text(
-                                "# " + TagList[index].Title,
-                                style: TextStyles.HashTgs,
-                              ),
-                            ),
-                          ),
-                        );
+                      onPressed: () {
+                        setState(() {
+                          if (AddTags.length < 6) {
+                            if (!AddTags.contains(tag)) {
+                              AddTags.add(tag);
+                            }
+                          }
+                        });
                       },
-                    ),
-                  ),
+                    );
+                  }).toList(),
                 ),
+
                 SizedBox(height: 20),
                 Image.asset('assets/images/flash.png', scale: 8),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: SizedBox(
-                    height: 90,
-                    width: double.infinity,
-                    child: GridView.builder(
-                      itemCount: AddTags.length,
-                      scrollDirection: Axis.horizontal,
-                      physics: ClampingScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 0.34,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 5,
-                        crossAxisCount: 2,
-                      ),
-                      itemBuilder: (context, index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(35),
-                            color:
-                                AddTags.length > 6 &&
-                                    !AddTags.contains(TagList[index])
-                                ? Colors.grey
-                                : const Color.fromARGB(255, 50, 61, 67),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "# ${AddTags[index].Title}",
-                              style: TextStyles.HashTgs,
-                            ),
-                          ),
-                        );
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: AddTags.map((tag) {
+                    return Chip(
+                      label: Text("# ${tag.Title}", style: TextStyles.HashTgs),
+                      backgroundColor: const Color.fromARGB(255, 50, 61, 67),
+                      deleteIcon: const Icon(Icons.close, color: Colors.white),
+                      onDeleted: () {
+                        setState(() {
+                          AddTags.remove(tag);
+                        });
                       },
-                    ),
-                  ),
+                    );
+                  }).toList(),
                 ),
               ],
             ),
