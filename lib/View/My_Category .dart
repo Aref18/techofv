@@ -45,6 +45,7 @@ class _MyCategoryState extends State<MyCategory> {
                   'دسته بندی هایی که دوست داری را انتخاب کن',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 10),
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
@@ -78,7 +79,7 @@ class _MyCategoryState extends State<MyCategory> {
                   runSpacing: 8,
                   children: AddTags.map((tag) {
                     return Chip(
-                      label: Text("# ${tag.Title}", style: TextStyles.HashTgs),
+                      label: Text("${tag.Title}", style: TextStyles.HashTgs),
                       backgroundColor: const Color.fromARGB(255, 50, 61, 67),
                       deleteIcon: const Icon(Icons.close, color: Colors.white),
                       onDeleted: () {

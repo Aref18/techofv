@@ -13,6 +13,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   int SelectedIndex = 0;
 
   @override
@@ -23,7 +24,11 @@ class _MainScreenState extends State<MainScreen> {
         MediaQuery.of(context).orientation == Orientation.landscape;
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
     return Scaffold(
+      drawer: Drawer(child: ListView(children: [])),
+      key: _scaffoldkey,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         title: Row(
@@ -31,7 +36,9 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             IconButton(
               highlightColor: Colors.transparent,
-              onPressed: () {},
+              onPressed: () {
+                _scaffoldkey.currentState?.openDrawer();
+              },
               icon: Icon(Icons.menu, size: 35),
             ),
             Image.asset('assets/images/tov.png', height: size.height / 13),
