@@ -4,6 +4,8 @@ import 'package:techofv/View/ButtonNav.dart';
 import 'package:techofv/View/HomeMain.dart';
 import 'package:techofv/View/ProfileScreen.dart';
 import 'package:techofv/View/Register_Intro.dart';
+import 'package:techofv/View/my_component.dart';
+import 'package:techofv/constants/text_styles.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({super.key});
@@ -15,7 +17,6 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   int SelectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -24,7 +25,50 @@ class _MainScreenState extends State<MainScreen> {
         MediaQuery.of(context).orientation == Orientation.landscape;
     double NavButton = isLandscape ? size.height / 4.5 : size.height / 9.5;
     return Scaffold(
-      drawer: Drawer(child: ListView(children: [])),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Container(
+              child: Image.asset(
+                'assets/images/tov.png',
+                height: size.height / 8,
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'پروفایل کاربری',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {},
+            ),
+            divider(size: size),
+            ListTile(
+              title: Text(
+                'درباره تک آو وی',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {},
+            ),
+            divider(size: size),
+
+            ListTile(
+              title: Text(
+                'اشتراک گذاری تک آو وی',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {},
+            ),
+            divider(size: size),
+            ListTile(
+              title: Text(
+                'تک آو وی در گیت هاب',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       key: _scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
