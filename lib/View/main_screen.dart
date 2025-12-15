@@ -13,8 +13,9 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey();
+
 class _MainScreenState extends State<MainScreen> {
-  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   int SelectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 onTap: () {},
               ),
-              divider(size: size),
+              divider2(size: size),
               ListTile(
                 title: Text(
                   'درباره تک آو وی',
@@ -50,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 onTap: () {},
               ),
-              divider(size: size),
+              divider2(size: size),
 
               ListTile(
                 title: Text(
@@ -59,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 onTap: () {},
               ),
-              divider(size: size),
+              divider2(size: size),
               ListTile(
                 title: Text(
                   'تک آو وی در گیت هاب',
@@ -74,7 +75,6 @@ class _MainScreenState extends State<MainScreen> {
       key: _scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         title: Row(
