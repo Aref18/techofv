@@ -24,11 +24,11 @@ class divider2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Divider(
-      thickness: 2,
+      thickness: 1.5,
       indent: size.width / 20,
       endIndent: size.width / 9,
+
       color: Colors.black45,
     );
-    ;
   }
 }

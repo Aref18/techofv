@@ -68,6 +68,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 onTap: () {},
               ),
+              divider2(size: size),
             ],
           ),
         ),
